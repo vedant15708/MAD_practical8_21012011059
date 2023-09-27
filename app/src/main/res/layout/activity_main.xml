@@ -131,13 +131,12 @@
                             android:text="Set Alarm Time"
                             android:textAppearance="?attr/textAppearanceHeadline6" />
 
-                        <TextClock
+                        <TextView
                             android:id="@+id/clocktime1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_margin="20dp"
-                            android:format12Hour="hh:mm:ss a"
                             android:padding="10dp"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -145,6 +144,7 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/cancel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"

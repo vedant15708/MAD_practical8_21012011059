@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
             TimePickerDialog(this, {tp, hour, minute -> setAlarmTime(hour, minute)}, Calendar.HOUR,Calendar.MINUTE,false).show()
             card.visibility = View.VISIBLE
         }
+        val cancelAlarm : MaterialButton = findViewById(R.id.cancel)
+        cancelAlarm.setOnClickListener {
+            stop()
+            card.visibility = View.GONE
+        }
 
     }
 
@@ -47,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         val pendingintent = PendingIntent.getBroadcast(applicationContext,4356,intentalarm,PendingIntent.FLAG_UPDATE_CURRENT)
         val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
         if(action == AlarmBroadcastReceiver.ALARMSTART){
-            //alarmManager.setExact(AlarmManager.RTC_WAKEUP,millitime,pendingintent)
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,millitime,pendingintent)
         }
         else if(action == AlarmBroadcastReceiver.ALARMSTOP){
             alarmManager.cancel(pendingintent)
