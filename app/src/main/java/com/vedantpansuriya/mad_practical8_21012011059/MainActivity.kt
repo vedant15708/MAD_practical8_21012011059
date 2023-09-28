@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         val card : MaterialCardView = findViewById(R.id.card1)
 
         card.visibility = View.GONE
-
         addAlarm.setOnClickListener {
             TimePickerDialog(this, {tp, hour, minute -> setAlarmTime(hour, minute)},Calendar.getInstance().get(Calendar.HOUR),Calendar.getInstance().get(Calendar.MINUTE),false).show()
             //TimePickerDialog(this, { tp, hour, minute -> sendDialogDataToActivity(hour, minute) }, Calendar.HOUR, Calendar.MINUTE, false).show()
