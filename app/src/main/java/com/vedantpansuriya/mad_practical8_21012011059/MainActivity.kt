@@ -25,9 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         card.visibility = View.GONE
         addAlarm.setOnClickListener {
-            TimePickerDialog(this, {tp, hour, minute -> setAlarmTime(hour, minute)},Calendar.getInstance().get(Calendar.HOUR),Calendar.getInstance().get(Calendar.MINUTE),false).show()
-            //TimePickerDialog(this, { tp, hour, minute -> sendDialogDataToActivity(hour, minute) }, Calendar.HOUR, Calendar.MINUTE, false).show()
-            card.visibility = View.VISIBLE
+            TimePickerDialog(this, {tp, hour, minute -> setAlarmTime(hour, minute);
+                card.visibility = View.VISIBLE},Calendar.getInstance().get(Calendar.HOUR),Calendar.getInstance().get(Calendar.MINUTE),false).show()
         }
 
         val cancelAlarm : MaterialButton = findViewById(R.id.cancel)
